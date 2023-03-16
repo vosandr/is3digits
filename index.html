@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Изучаем Vue.js</title>
+<meta charset="utf-8" />
+</head>
+<body>
+<div id="app">
+    <input type="number" v-on:input="setMessage" />
+    <p>{{message}}</p>
+</div>
+<script src="https://unpkg.com/vue@2.7.14/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!'
+        },
+        methods: {
+            setMessage: function(event){
+               if (event.target.value > 99 && event.target.value < 1000){
+                    this.message = 'Число трехзначное'
+               }
+               else {
+                this.message = 'Если это число, то оно не трехзначное'
+               }
+            }
+        }
+    })
+</script>
+</body>
+</html>
